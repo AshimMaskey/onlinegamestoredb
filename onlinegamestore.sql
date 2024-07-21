@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 22, 2024 at 09:21 AM
+-- Generation Time: Jul 21, 2024 at 07:46 PM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -42,8 +42,7 @@ CREATE TABLE `admin` (
 
 INSERT INTO `admin` (`admin_id`, `admin_name`, `email`, `phone`, `date_of_birth`, `password`) VALUES
 (1, 'Ashim Maskey', 'ashimmaskey9@gmail.com', '9810073430', '2003-01-14', 'ashim123'),
-(2, 'Sapana Dahal', 'dsapana370@gmai.com', '9827754788', '2003-03-19', 'sapana123'),
-(4, 'Rajin Dangal', 'rajindangal@gmail.com', '9818011111', '2020-01-01', 'rajin123');
+(2, 'Sapana Dahal', 'dsapana370@gmai.com', '9827754788', '2003-03-19', 'sapana123');
 
 -- --------------------------------------------------------
 
@@ -62,7 +61,8 @@ CREATE TABLE `cart` (
 --
 
 INSERT INTO `cart` (`user_id`, `game_id`, `added_at`) VALUES
-(1, 4, '2024-06-20 17:13:46');
+(1, 6, '2024-07-21 01:25:31'),
+(1, 2, '2024-07-21 17:39:44');
 
 -- --------------------------------------------------------
 
@@ -93,8 +93,28 @@ INSERT INTO `games` (`game_id`, `game_title`, `description`, `price`, `genre`, `
 (6, 'Prince of Persia', '\"Prince of Persia\" is a critically acclaimed action-adventure video game series developed and published by various companies over the years, with the most notable entries being developed by Ubisoft. The series is known for its engaging storytelling, fluid parkour-inspired movement mechanics, and charismatic protagonist, the Prince.\r\nOriginally released in 1989, the series gained widespread recognition with the release of \"Prince of Persia: The Sands of Time\" in 2003. This installment introduced players to the acrobatic and agile Prince as he navigated treacherous environments, solved puzzles, and battled enemies using a combination of swordplay and time-manipulating abilities.', 250, 'action', '1998-01-02', 'uploadsgame/66125aaa63b15.jpg', 'uploadsgame/66125aaa63e44.exe'),
 (7, 'Tic Tac Toe', '\"Tic-Tac-Toe\" is a classic paper-and-pencil game played by two players. The game is typically played on a 3x3 grid, although larger grids can be used for variations. The objective of the game is for players to create a line of three of their symbols (traditionally X or O) either horizontally, vertically, or diagonally.', 0, 'strategy', '1997-01-04', 'uploadsgame/6612645b5c4c5.jpg', 'uploadsgame/6612645b7cbb3.exe'),
 (9, 'Sudoku', 'Sudoku is a logic-based number-placement puzzle game that became popular in the late 20th century. The objective of Sudoku is to fill a 9x9 grid with digits so that each column, each row, and each of the nine 3x3 subgrids (also called \"boxes\" or \"regions\") contain all of the digits from 1 to 9.', 0, 'strategy', '1969-01-01', 'uploadsgame/661744a53bac2.jpg', 'uploadsgame/661744a54058d.exe'),
-(12, 'Game1', 'sdfkja', 123, 'sk', '2020-01-01', 'uploadsgame/Screenshot (326).png', 'uploadsgame/BraveBrowserSetup-DGF367.exe'),
-(13, 'a', 'sdf', 100, 'saf', '1222-10-10', 'uploadsgame/Screenshot (286).png', 'uploadsgame/BraveBrowserSetup-DGF367.exe');
+(15, 'honkai impact', 'Honkai Impact is a popular action role-playing game developed by miHoYo. Set in a futuristic world plagued by catastrophic events known as Honkai, players assume the role of powerful heroines known as Valkyries who wield unique abilities to combat monstrous creatures and otherworldly threats. With its stunning visuals, deep storyline, and engaging gameplay mechanics, Honkai Impact has captivated players worldwide since its release, offering a blend of fast-paced combat and strategic team-building elements that keep players immersed in its dynamic universe.', 20, 'adventure', '2001-01-01', 'uploadsgame/HONKAI STAR RAIL.jfif', 'uploadsgame/667d7174b45fb.exe');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `genres`
+--
+
+CREATE TABLE `genres` (
+  `id` int(11) NOT NULL,
+  `genre` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `genres`
+--
+
+INSERT INTO `genres` (`id`, `genre`) VALUES
+(4, 'action'),
+(1, 'adventure'),
+(10, 'FPS'),
+(23, 'strategy');
 
 -- --------------------------------------------------------
 
@@ -122,8 +142,7 @@ INSERT INTO `news` (`news_id`, `title`, `description`, `date`, `Author`, `image_
 (3, 'Mobile Legends: Bang Bang expands global esports ecosystem with Snapdragon Pro Series', 'ESL FACEIT Group, the organiser of the mobile esports tournament Snapdragon Pro Series, has announced a significant partnership with MOONTON Games, the company behind the mobile MOBA game Mobile Legends: Bang Bang (MLBB).', '2024-05-11', 'Ivan Simic', 'uploads/3.png', 'https://esportsinsider.com/2024/03/snapdragon-pro-series-mlbb'),
 (4, 'Mobile Legends rebrands international esports event to Mid Season Cup', 'The 2024 esports roadmap for the mobile MOBA game Mobile Legends: Bang Bang has been unveiled with a notable change made to one of the title’s most popular tournaments.', '2024-01-02', 'Ivan Šimić', 'uploads/3.jpg', 'https://esportsinsider.com/2024/01/mobile-legends-msc-to-mid-season-cup'),
 (5, 'VCT Masters Madrid sets new VALORANT viewership record', 'VALORANT’s VCT 2024: Masters Madrid event has become the game’s most-watched tournament ever.', '2024-05-26', 'Ivan Šimić', 'uploads/4.webp', 'https://esportsinsider.com/2024/03/vct-masters-madrid-record-viewership'),
-(7, 'Kinguin Esports Performance Center in Warsaw announces closure', 'Polish esports and gaming marketplace Kinguin has announced that its Esports Performance Center (EPC) in Warsaw, the country’s capital, will shut down in May 2024.', '2024-06-04', 'Ivan Šimić', 'uploads/5.webp', 'https://esportsinsider.com/2024/04/kinguin-esports-performance-center-close'),
-(9, 'this is the title', 'this is thee fasfd', '2020-01-01', 'ashikm', 'uploads/Screenshot (286).png', 'https://esportsinsider.com/2024/04/kinguin-esports-performance-center-close');
+(7, 'Kinguin Esports Performance Center in Warsaw announces closure', 'Polish esports and gaming marketplace Kinguin has announced that its Esports Performance Center (EPC) in Warsaw, the country’s capital, will shut down in May 2024.', '2024-06-04', 'Ivan Šimić', 'uploads/5.webp', 'https://esportsinsider.com/2024/04/kinguin-esports-performance-center-close');
 
 -- --------------------------------------------------------
 
@@ -149,7 +168,9 @@ INSERT INTO `payments` (`id`, `transaction_code`, `product_code`, `status`, `use
 (1, '0007T64', 'EPAYTEST', 'COMPLETE', 1, 350.00, '2024-06-19 17:25:17'),
 (2, '0007T6D', 'EPAYTEST', 'COMPLETE', 1, 250.00, '2024-06-19 18:55:13'),
 (3, '0007T6T', 'EPAYTEST', 'COMPLETE', 1, 390.00, '2024-06-20 01:20:24'),
-(4, '0007TG0', 'EPAYTEST', 'COMPLETE', 1, 100.00, '2024-06-20 17:15:57');
+(4, '0007TG0', 'EPAYTEST', 'COMPLETE', 1, 100.00, '2024-06-20 17:15:57'),
+(5, '0007VGI', 'EPAYTEST', 'COMPLETE', 1, 650.00, '2024-06-27 16:42:12'),
+(6, '0008BQI', 'EPAYTEST', 'COMPLETE', 1, 440.00, '2024-07-21 17:41:12');
 
 -- --------------------------------------------------------
 
@@ -174,7 +195,12 @@ INSERT INTO `payment_items` (`id`, `payment_id`, `game_id`) VALUES
 (4, 2, 6),
 (5, 3, 1),
 (6, 3, 2),
-(7, 4, 4);
+(7, 4, 4),
+(8, 5, 1),
+(9, 5, 6),
+(10, 5, 15),
+(11, 6, 6),
+(12, 6, 2);
 
 -- --------------------------------------------------------
 
@@ -199,10 +225,9 @@ CREATE TABLE `users` (
 INSERT INTO `users` (`user_id`, `username`, `email`, `phone`, `date_of_birth`, `password`, `status`) VALUES
 (1, 'Ashim Maskey', 'ashimmaskey4@gmail.com', '9810073430', '2059-09-30', 'ashim123', 1),
 (2, 'Rajin Dangal', 'rajindangal@gmail.com', '98180111111', '2059-10-20', 'rajin123', 1),
-(3, 'Sapana Dahal', 'sapana@gmail.com', '9810000000', '2058-01-01', 'sapana123', 0),
+(3, 'Sapana Dahal', 'sapana@gmail.com', '9810000000', '2058-01-01', 'sapana123', 1),
 (4, 'Rachit Dangal', 'rachit@gmail.com', '9810063636', '2057-01-01', 'rachit123', 1),
-(5, 'Sumit Sainju', 'sumit@gmail.com', '9810063235', '2058-02-02', 'sumit123', 0),
-(6, 'Dipesh Shrestha', 'dipesh@gmail.com', '9810632646', '2057-01-02', 'dipesh123', 0);
+(9, 'Sumit', 'ashimmaskey9@gmail.com', '9810073430', '2020-10-12', 'ashim123', 1);
 
 --
 -- Indexes for dumped tables
@@ -226,6 +251,13 @@ ALTER TABLE `cart`
 --
 ALTER TABLE `games`
   ADD PRIMARY KEY (`game_id`);
+
+--
+-- Indexes for table `genres`
+--
+ALTER TABLE `genres`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `genre` (`genre`);
 
 --
 -- Indexes for table `news`
@@ -260,37 +292,43 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `admin`
 --
 ALTER TABLE `admin`
-  MODIFY `admin_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `admin_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `games`
 --
 ALTER TABLE `games`
-  MODIFY `game_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `game_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+
+--
+-- AUTO_INCREMENT for table `genres`
+--
+ALTER TABLE `genres`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 
 --
 -- AUTO_INCREMENT for table `news`
 --
 ALTER TABLE `news`
-  MODIFY `news_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `news_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT for table `payments`
 --
 ALTER TABLE `payments`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `payment_items`
 --
 ALTER TABLE `payment_items`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- Constraints for dumped tables
